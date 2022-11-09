@@ -4,7 +4,7 @@ import systemLoadLine from "@netdata/charts/dist/es6/fixtures/systemLoadLine";
 const now = Date.now()
 const from = now - 15 * 60 * 1000
 const first = 1617946830000
-const offset = from - first
+const offset = from - now
 
 //console.log(systemLoadLine[0]);
 export const dd = {
@@ -626,8 +626,9 @@ export function formatData(data, key) {
       //"2.0/13/10/us/parsed_data/rooms/1/AirTemperatureSensor/1/status/signalInput".split("parsed_data")
       // console.log(data[k][0][0]);
       const first = new Date(data[k][0][0]).getTime()
-      const offset = from - first
-      //const offset = 0
+      // console.log(first);
+      // const offset = from - first
+      // const offset = 0
 
       labels.push(label+" "+(i+1))
       if (start) {
@@ -663,5 +664,7 @@ export function formatData(data, key) {
         },
         min: min,
         max: max,
+        "before":1665099046656,
+        "after":1665098046656,
     }
   }
